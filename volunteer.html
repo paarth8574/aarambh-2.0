@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>Aarambh 2.0 — Volunteers</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root{
+      --deep:#07223a; --ink:#0b1f33; --text:#1e293b; --muted:#64748b;
+      --accent:#f2b400; --bg:#ffffff; --wash:#f6f8fb; --card:#ffffff;
+      --ring: rgba(7,34,58,.18); --maxw:1200px; --radius:14px;
+      --shadow:0 8px 30px rgba(2,18,33,.08);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--text);
+      font:15px/1.6 Montserrat,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial}
+    /* Header */
+    header{position:sticky;top:0;z-index:40;background:#fff;border-bottom:1px solid #eef2f7;backdrop-filter:saturate(1.1) blur(6px)}
+    .topbar{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;gap:18px;padding:14px 20px}
+    .brand img{height:40px;display:block}
+    nav{margin-left:auto;position:relative}
+    .nav-list{display:flex;gap:22px;list-style:none;margin:0;padding:0}
+    .nav-list a{text-decoration:none;color:#334155;font-weight:500;font-size:14px;padding:8px 2px;border-radius:8px;transition:color .2s}
+    .nav-list a:hover{color:var(--accent)}
+    .hamburger{display:none;width:42px;height:38px;border:0;background:transparent;cursor:pointer;position:relative;border-radius:10px}
+    .hamburger span{position:absolute;left:10px;right:10px;height:2px;background:#0f172a;transition:transform .25s,opacity .2s,top .25s}
+    .hamburger span:nth-child(1){top:12px}.hamburger span:nth-child(2){top:18px}.hamburger span:nth-child(3){top:24px}
+    @media (max-width: 992px){
+      .nav-list{position:absolute;top:48px;right:0;flex-direction:column;background:#fff;padding:12px;border:1px solid #e9eef5;border-radius:12px;box-shadow:var(--shadow);width:220px;display:none}
+      nav.open .nav-list{display:flex}
+      .hamburger{display:block;margin-left:auto}
+    }
+    /* Band */
+    .organized{background:var(--deep);color:#fff;text-align:center;padding:22px 12px;font-size:20px;letter-spacing:.4px}
+    /* Container */
+    .container{max-width:var(--maxw);margin:22px auto;padding:0 18px}
+    /* Volunteer list */
+    .vol-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
+    .vol{background:var(--card);border:1px solid #e9eef5;border-radius:12px;box-shadow:var(--shadow);padding:14px 16px;font-weight:600;color:var(--ink)}
+    @media (max-width: 900px){.vol-grid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width: 560px){.vol-grid{grid-template-columns:1fr}}
+    /* Partners */
+    .partners{background:#0a2e4c;color:#fff;padding:28px 16px;margin-top:26px}
+    .partners h3{text-align:center;margin:0 0 14px;font-weight:600}
+    .wrap{max-width:var(--maxw);margin:0 auto;display:flex;gap:22px;flex-wrap:wrap;justify-content:center}
+    .partner{width:120px;text-align:center}
+    .partner img{width:90px;height:90px;object-fit:contain;background:#fff;border-radius:12px;padding:10px;box-shadow:0 6px 14px rgba(0,0,0,.12)}
+    .partner span{display:block;margin-top:6px;font-size:12px}
+    /* Footer */
+    footer{max-width:var(--maxw);margin:2px auto 60px;padding:0 0px;color:var(--muted);font-size:13px}
+    /* Floating CTA */
+    .chat-popup{position:fixed;right:18px;bottom:18px;z-index:60;display:inline-flex;align-items:center;gap:10px;text-decoration:none;
+      padding:12px 18px;border-radius:999px;font-weight:700;font-size:14px;color:#07223a;background:linear-gradient(180deg,#ffec8a,#ffd84a);
+      border:1px solid #f2b400;box-shadow:0 10px 24px rgba(0,0,0,.12),0 0 0 4px rgba(242,180,0,.12);
+      transition:transform .18s ease, box-shadow .18s ease}
+    .chat-popup:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 16px 36px rgba(0,0,0,.18),0 0 0 6px rgba(242,180,0,.16)}
+    .chat-popup:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(7,34,58,.2),0 0 0 8px rgba(242,180,0,.35)}
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="topbar">
+      <div class="brand">
+        <img src="aarambhlogo.png" alt="Aarambh 2.0"/>
+      </div>
+      <button aria-expanded="false" aria-label="Toggle navigation" class="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#prizes">Prizes</a></li>
+          <li><a href="index.html#dates">Dates</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="volunteer.html">Volunteers</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Band -->
+  <section class="organized">Our Volunteers</section>
+
+  <!-- Content -->
+  <div class="container">
+    <p>
+      These incredible volunteers are helping to make <b>Aarambh 2.0</b> a grand success.
+      You can find them around your campus — feel free to reach out to them if you need
+      any help or guidance regarding the event.
+    </p>
+    <br>
+    <br>
+
+    <!-- Card grid instead of plain UL (more visual) -->
+    <div class="vol-grid" aria-label="Volunteer list">
+      <div class="vol">Bhavya Sharma</div>
+      <div class="vol">Shubh Chaurasia</div>
+      <div class="vol">Saurabh Sharma</div>
+      <div class="vol">Garima Verma</div>
+      <div class="vol">Arsh Umar</div>
+      <div class="vol">Kartik Gupta</div>
+      <div class="vol">Sneha Singh</div>
+      <div class="vol">Reesha</div>
+      <div class="vol">Deepa Yadav</div>
+      <div class="vol">Deeksha Yadav</div>
+      <div class="vol">Kashish Vishwakarma</div>
+    </div>
+  </div>
+
+  <!-- Partners -->
+  <section class="partners">
+    <h3>Partners & Associations</h3>
+    <div class="wrap">
+      <div class="partner">
+        <img src="https://uniformapp.in/blog/wp-content/uploads/2020/05/APJ-Abdul-Kalam-Technical-University-2.jpg" alt="AKTU"/>
+        <span>AKTU</span>
+      </div>
+      <div class="partner">
+        <img src="https://career.webindia123.com/career/education-news-events/images/aicte.jpg" alt="AICTE"/>
+        <span>AICTE</span>
+      </div>
+      <div class="partner">
+        <img src="https://www.joonsquare.com/usermanage/image/business/allenhouse-public-school-jhansi-3844/allenhouse-public-school-jhansi-logo.png" alt="Allenhouse"/>
+        <span>Allenhouse</span>
+      </div>
+      <div class="partner">
+        <img src="startupfoundation.png" alt="Startup Foundation"/>
+        <span>Startup Foundation</span>
+      </div>
+      <div class="partner">
+        <img src="https://startinup.up.gov.in/wp-content/uploads/2022/12/innv_hub.png" alt="Innovation Hub"/>
+        <span>Innovation Hub</span>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <!-- Floating CTA -->
+  <a class="chat-popup" href="https://aiom.ac.in/aarambh/" target="_blank" rel="noopener">🚀 Register Now</a>
+
+  <!-- Nav toggle -->
+  <script>
+    (function(){
+      const btn = document.querySelector('.hamburger');
+      const nav = document.querySelector('nav');
+      if(btn && nav){
+        btn.addEventListener('click', function(){
+          const open = nav.classList.toggle('open');
+          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
