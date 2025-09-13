@@ -184,7 +184,7 @@ nav.open + .hamburger,
   border-radius:var(--radius);
   overflow:hidden;
   box-shadow:var(--shadow);
-  background:linear-gradient( to bottom right, rgba(7,34,58,.9), rgba(7,34,58,.82) ), url('https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=1400&auto=format&fit=crop') center/cover;
+  background:linear-gradient( to bottom right, rgba(7,34,58,.9), rgba(7,34,58,.82) ), url('https://abss.ac.in/wp-content/uploads/2023/03/abs-slider.jpg') center/cover;
   min-height:320px;
   display:flex;
   align-items:center;
@@ -475,3 +475,4 @@ footer{
   background-color: #0a2e4c;
   padding-top:10px;
 }
+
