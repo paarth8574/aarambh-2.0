@@ -475,3 +475,25 @@ footer{
   background-color: #0a2e4c;
   padding-top:10px;
 }
+
+/* Tighter phones: keep it inside, shrink slightly */
+@media (max-width: 420px){
+  .free-entry{
+    top: 10px;
+    right: 10px;
+    transform: scale(0.95);
+  }
+}
+
+/* Very small phones: drop absolute and let it flow to avoid overlap */
+@media (max-width: 360px){
+  .hero-card{ padding-top: 40px; } /* room for the pill if you keep it absolute */
+  /* OR switch to flow layout if overlap persists: */
+  .free-entry{
+    position: static;         /* stops overflow */
+    align-self: flex-end;     /* stick to the right within its container */
+    margin: 8px 0 0 auto;
+    transform: none;
+  }
+}
+
