@@ -13,7 +13,7 @@
   --shadow:0 8px 30px rgba(2, 18, 33, .08);
 }
 
-/* arambh4.0 */
+/* arambh4.0  css */
 
 *{
   box-sizing: border-box;
@@ -173,7 +173,7 @@ nav.open + .hamburger,
 .hero-wrap{
   max-width:var(--maxw);
   margin:24px auto 10px;
-  padding:0 20px;
+  padding:0 10px;
   display:grid;
   grid-template-columns: 1.25fr .95fr;
   gap:26px;
@@ -476,24 +476,55 @@ footer{
   padding-top:10px;
 }
 
-/* Tighter phones: keep it inside, shrink slightly */
-@media (max-width: 420px){
-  .free-entry{
-    top: 10px;
-    right: 10px;
-    transform: scale(0.95);
-  }
+/* Base: make the badge size responsive */
+.free-entry{
+  font-weight: 700;
+  font-size: clamp(11px, 3.2vw, 14px);
+  padding: clamp(6px, 2vw, 8px) clamp(10px, 3vw, 14px);
+  border-radius: 12px;
+  white-space: nowrap;
+  /* if you're using absolute positioning already, keep it */
+  position: absolute; 
+  top: 14px; 
+  right: 14px;
+  z-index: 2;
 }
 
-/* Very small phones: drop absolute and let it flow to avoid overlap */
-@media (max-width: 360px){
-  .hero-card{ padding-top: 40px; } /* room for the pill if you keep it absolute */
-  /* OR switch to flow layout if overlap persists: */
+/* ---- HARD FIX: Free Entry badge vs. left ribbon on small phones ---- */
+/* Works for all small phones, with special tuning for 315–432px */
+
+@media (max-width:480px){
+  /* keep both pills visible and separate */
   .free-entry{
-    position: static;         /* stops overflow */
-    align-self: flex-end;     /* stick to the right within its container */
-    margin: 8px 0 0 auto;
+    position: absolute;
+    top: 56px;         /* drop BELOW the left ribbon */
+    right: 12px;
+    font-size: 12px;
+    padding: 6px 12px;
+    white-space: nowrap;
     transform: none;
+    z-index: 3;
+  }
+
+  /* create vertical space so content doesn't collide with the lowered badge */
+  .hero-card{
+    padding-top: 72px;  /* room for both pills */
+  }
+
+  /* tighten the left ribbon a bit on tiny screens */
+  .eyebrow{
+    font-size: 11px;
+    padding: 5px 9px;
   }
 }
 
+/* narrower band where you said it breaks the most */
+@media (min-width:315px) and (max-width:432px){
+  .free-entry{
+    top: 62px;        /* a little lower for this range */
+    right: 10px;
+  }
+  .hero-card{
+    padding-top: 78px; /* add a touch more breathing room */
+  }
+}
