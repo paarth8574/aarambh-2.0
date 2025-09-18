@@ -466,15 +466,6 @@ nav.open + .hamburger,
 }
 
 /* Footer mini */
-footer{
-  max-width:var(--maxw);
-  color:#6b7280;
-  font-size:13px;
-  text-align:center;
-  
-  background-color: #0a2e4c;
-  padding-top:10px;
-}
 
 /* Base: make the badge size responsive */
 .free-entry{
